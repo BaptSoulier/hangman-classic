@@ -1,0 +1,36 @@
+Hangman-Classic 
+
+Import : 
+-	Bufio : Il sert à implémenter les E/S. Il enferme un objet du type Reader ou Writer en créant un autre objet similaire. 
+-	Fmt : Pour les retours à la ligne suite à un « fmt.println() ».
+-	Math/rand : permet l’aléatoire.
+-	Os : il fournit une interface indépendante de celle du SE. Conception de type Unix.
+-	Strings : Il sert à implémenter des fonctions pour manipuler les chaines de caractères UTF-8.
+-	Time : mesure et affiche le temps 
+
+Var dictionnaire :
+    Le dictionnaire contient la banque de mot qui seront proposés aléatoirement durant le jeu.
+
+Var position : 
+    La variable position contient les dix positions du hangman. La syntaxe « «./position/hangman0 », » permet de récupérer les fichier texte qui contiennent les positions du hangman, c’est le chemin des fichiers.
+
+Func main : 
+-	var inputReader = bufio.NewReader(os.Stdin) : 
+
+Func affiche_position : 
+    Cette fonction utilise les positions du hangman, en cas ou le fichier est introuvable il affiche "erreur".
+
+Func cree_mot : 
+    La fonction "masque" chaque lettre par '_'.
+
+Func change_caractere : 
+    La fonction remplace le caractère '_' par la bonne lettre correspondante.
+
+Func mot_incomplet : 
+    Cette fonction laisse le caractère '_' si le mot est incomplet. 
+
+Func lettre_correct : 
+    En cas de lettre correct, la fonction trouve la lettre.
+
+Func mot_correct : 
+    Toutes les lettres donnés par l'utilisateur sont correct et donne un mot correct.
