@@ -15,7 +15,18 @@ Var position :
     La variable position contient les dix positions du hangman. La syntaxe « «./position/hangman0 », » permet de récupérer les fichier texte qui contiennent les positions du hangman, c’est le chemin des fichiers.
 
 Func main : 
--	var inputReader = bufio.NewReader(os.Stdin) : 
+- var inputReader = bufio.NewReader(os.Stdin) : 
+- rand.Seed(time.Now().UnixNano()) : utilisée pour définir une valeur de départ afin de générer des nombres aléatoires.
+- random := rand.Intn(len(dictionnaire)) : variable pour choisir aléatoirement un mot dans le dictionnaire.
+- fullWord := strings.Split(dictionnaire[random], "") : permet de fractionner la chaine de caractere.
+- gameWord := cree_mot(fullWord, "_") : remplace chaque caractère de la chaine fractionnée par '_'.
+- fmt.Printf("%v\n", gameWord) : La balise '%v' sert à imprimer la valeur au format par defaut.
+- Ligne 55 à 58 : Permet de trouver les lettres 
+- Ligne 60 à 73 : Permet d'indiquer que le mot est correct
+- Ligne 78 à 80 : Si la lettre est correct, à la ligne, on affiche la position du pendu.
+- Ligne 81 à 85 : Si la lettre n'est pas correct on ajoute +1 à la position du pendu et on l'affiche.
+- Ligne 86 - 87 : Si la longeur de postion est arrivé a son maximum on arrete la boucle.
+- Ligne 91 à 94 : Si la longueur de la posstion est arrivé à son maximum on affiche "TU AS PERDU". Sinon on affiche "TU AS GAGNE".
 
 Func affiche_position : 
     Cette fonction utilise les positions du hangman, en cas ou le fichier est introuvable il affiche "erreur".
