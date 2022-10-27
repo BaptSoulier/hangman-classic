@@ -1,47 +1,47 @@
 Hangman-Classic 
 
 Import : 
--	Bufio : Il sert à implémenter les E/S. Il enferme un objet du type Reader ou Writer en créant un autre objet similaire. 
--	Fmt : Pour les retours à la ligne suite à un « fmt.println() ».
+-	Bufio : il sert à implémenter les E/S. Il enferme un objet du type Reader ou Writer en créant un autre objet similaire. Il aide à lire un tas de caractères en une seule fois.
+-	Fmt : fournit des fonctions qui peuvent lire et écrire à partir d’E/S.
 -	Math/rand : permet l’aléatoire.
--	Os : il fournit une interface indépendante de celle du SE. Conception de type Unix.
--	Strings : Il sert à implémenter des fonctions pour manipuler les chaines de caractères UTF-8.
+-	Os : permet d’effectuer des fonctionnalités du système d’exploitation. Conception de type Unix.
+-	Strings : il sert à implémenter des fonctions pour manipuler les chaînes de caractères UTF-8.
 -	Time : mesure et affiche le temps 
 
 Var dictionnaire :
-    Le dictionnaire contient la banque de mot qui seront proposés aléatoirement durant le jeu.
+    le dictionnaire contient la banque de mots qui seront proposés aléatoirement durant le jeu.
 
 Var position : 
-    La variable position contient les dix positions du hangman. La syntaxe « «./position/hangman0 », » permet de récupérer les fichier texte qui contiennent les positions du hangman, c’est le chemin des fichiers.
+    la variable position contient les dix positions du hangman. La syntaxe « «./position/hangman0 », » permet de récupérer les fichier texte qui contiennent les positions du hangman, c’est le chemin des fichiers.
 
 Func main : 
-- var inputReader = bufio.NewReader(os.Stdin) : 
+- var inputReader = bufio.NewReader(os.Stdin) : permet de lire un seul caratère de STDIN.
 - rand.Seed(time.Now().UnixNano()) : utilisée pour définir une valeur de départ afin de générer des nombres aléatoires.
 - random := rand.Intn(len(dictionnaire)) : variable pour choisir aléatoirement un mot dans le dictionnaire.
-- fullWord := strings.Split(dictionnaire[random], "") : permet de fractionner la chaine de caractere.
-- gameWord := cree_mot(fullWord, "_") : remplace chaque caractère de la chaine fractionnée par '_'.
-- fmt.Printf("%v\n", gameWord) : La balise '%v' sert à imprimer la valeur au format par defaut.
-- Ligne 55 à 58 : Permet de trouver les lettres 
-- Ligne 60 à 73 : Permet d'indiquer que le mot est correct
-- Ligne 78 à 80 : Si la lettre est correct, à la ligne, on affiche la position du pendu.
-- Ligne 81 à 85 : Si la lettre n'est pas correct on ajoute +1 à la position du pendu et on l'affiche.
-- Ligne 86 - 87 : Si la longeur de postion est arrivé a son maximum on arrete la boucle.
-- Ligne 91 à 94 : Si la longueur de la posstion est arrivé à son maximum on affiche "TU AS PERDU". Sinon on affiche "TU AS GAGNE".
+- fullWord := strings.Split(dictionnaire[random], "") : permet de fractionner la chaîne de caractères.
+- gameWord := cree_mot(fullWord, "_") : remplace chaque caractère de la chaîne fractionnée par '_'.
+- fmt.Printf("%v\n", gameWord) : la balise '%v' sert à imprimer la valeur au format par défaut.
+- Ligne 55 à 58 : permet de trouver les lettres 
+- Ligne 60 à 73 : permet d'indiquer que le mot est correct
+- Ligne 78 à 80 : si la lettre est correcte, à la ligne, on affiche la position du pendu.
+- Ligne 81 à 85 : si la lettre n'est pas correct on ajoute +1 à la position du pendu et on l'affiche.
+- Ligne 86 - 87 : si la longueur de position est arrivée à son maximum on arrete la boucle.
+- Ligne 91 à 94 : si la longueur de la position est arrivée à son maximum, on affiche "TU AS PERDU". Sinon on affiche "TU AS GAGNE".
 
 Func affiche_position : 
-    Cette fonction utilise les positions du hangman, en cas ou le fichier est introuvable il affiche "erreur".
+    cette fonction utilise les positions du hangman, en cas où le fichier est introuvable il affiche "erreur".
 
 Func cree_mot : 
-    La fonction "masque" chaque lettre par '_'.
+    la fonction "masque" chaque lettre par '_'.
 
 Func change_caractere : 
-    La fonction remplace le caractère '_' par la bonne lettre correspondante.
+    la fonction remplace le caractère '_' par la bonne lettre correspondante.
 
 Func mot_incomplet : 
-    Cette fonction laisse le caractère '_' si le mot est incomplet. 
+    cette fonction laisse le caractère '_' si le mot est incomplet. 
 
 Func lettre_correct : 
-    En cas de lettre correct, la fonction trouve la lettre.
+    en cas de lettre correcte, la fonction trouve la lettre.
 
 Func mot_correct : 
-    Toutes les lettres donnés par l'utilisateur sont correct et donne un mot correct.
+    toutes les lettres donnés par l'utilisateur sont correct et affiche le mot correct.
